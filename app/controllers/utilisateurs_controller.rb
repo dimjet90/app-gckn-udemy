@@ -2,6 +2,10 @@ class UtilisateursController < ApplicationController
   before_action :logged_in_utilisateur, only: [:edit, :update]
   before_action :correct_utilisateur , only: [:edit, :update]
 
+  def index
+    @utilisateurs = Utilisateur.all
+  end
+
   def show
     @utilisateur = Utilisateur.find(params[:id])
     
