@@ -19,10 +19,9 @@ class UtilisateursController < ApplicationController
   def create 
     @utilisateur = Utilisateur.new(utilisateur_params)
     if @utilisateur.save
-      # Sauvegarde confirmé <= true
-      log_in @utilisateur
-      flash[:success] = "Bienvenue sur le clone de Twitter !"
-      redirect_to @utilisateur
+      @utilisateur.send_activation_email
+      flash[:info] = "Merci de consulter votre e-mail pour le lien d'activation de votre compte."
+      redirect_to root_url
     else
       render "new"
     end
