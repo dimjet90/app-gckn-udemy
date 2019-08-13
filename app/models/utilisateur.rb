@@ -41,7 +41,7 @@ class Utilisateur < ApplicationRecord
     end
 
     def activate 
-         update_attribute(:activated, true)
+        update_attribute(:activated, true)
         update_attribute(:activated_at, Time.zone.now)
     end
 
