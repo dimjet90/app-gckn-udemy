@@ -12,5 +12,4 @@ class UtilisateurMailerPreview < ActionMailer::Preview
   def password_reset
     UtilisateurMailer.password_reset
   end
-
 end

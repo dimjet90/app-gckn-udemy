@@ -1,7 +1,7 @@
-class AddActivationToUtilisateurs < ActiveRecord::Migration[5.1]
+class AddActivationToUsers < ActiveRecord::Migration[5.1]
   def change
     add_column :utilisateurs, :activation_digest, :string
     add_column :utilisateurs, :activated, :boolean, default: false
-    add_column :utilisateurs, :acitvated_at, :datetime
+    add_column :utilisateurs, :activated_at, :datetime
   end
 end
