@@ -13,7 +13,7 @@ class PasswordResetsController < ApplicationController
       @utilisateur.create_reset_digest
       @utlisateur.send_password_reset_email
       flash[:info]= "Un email a été envoyé avec les instructions pour récupérer votre mot de passe."
-      redirect_to_root_url
+      redirect_to  root_url
     else
       flash.now[:danger] = "Adresse email non trouvée"
       render "new"
@@ -49,7 +49,7 @@ class PasswordResetsController < ApplicationController
   def valid_utilisateur
     unless(@utilisateur && @utilisateur.activated? && 
           @utilisateur.authenticated?(:reset, params[:id]))
-      redirect_to_root_url
+      redirect_to root_url
     end
   end
 
